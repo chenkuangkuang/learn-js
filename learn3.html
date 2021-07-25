@@ -1,0 +1,53 @@
+<!-- z-index -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      border: 1px solid #ddd;
+    }
+    .con1{
+      background-color: #b377c2;
+      z-index: -1;
+    }
+    .con2{
+      display: block;
+      background-color: #8b75c6;
+    }
+    .con3{
+      position: float;
+      background-color: #5171c3;
+    }
+    .con4{
+      display: inline-block;
+      background-color: #52cc91;
+    }
+    .con5{
+      z-index: auto;
+      background-color: #9ed263;
+    }
+    .con6{
+      z-index: 1;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class='con1'>con1
+    <div class="con2">con2
+      <div class="con3">con3
+        <div class="con4">con4
+          <div class="con5">con5
+            <div class="con6">con6
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

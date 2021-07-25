@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 内联非替换元素，垂直margin无效 （水平margin有效） */
+    *{
+      border: 1px solid #ddd;
+    }
+    .span1{
+      margin: 10px;
+    }
+    /* 内联替换元素，margin有效 */
+    .img2{
+      margin: 10px;
+    }
+    /* 表格中的tr和td的margin无效 */
+    table tr, table td{
+      margin: 10px;
+    }
+    /* 绝对定位元素非定位方位的margin值无效 */
+    .absolute4{
+      position: absolute;
+      top: 0;
+      left: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      border: 1px solid red;
+    }
+    /* 定高容器的子元素的margin-bottom或者宽度定死的子元素的margin-right的定位失效 */
+    .parent{
+      width: 200px;
+      background-color: gray;
+    }
+    .child5{
+      width: 100px;
+      background-color: yellow;
+      margin-right: 10px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <span class="span1">内联非替换元素</span>
+  <img src="https://www.baidu.com/img/pc_4dd272233fa6c632f9dfadf9d948974f.gif" class="img2" alt="内联替换元素">
+  <table>
+    <tr><td>我</td><td>是</td></tr>
+    <tr><td>表</td><td>格</td></tr>
+  </table>
+  <div class="absolute4">绝对定位元素</div>
+  <div class="parent">
+    定宽容器
+    <div class="child5">定宽容器的子元素</div>
+  </div>
+</body>
+</html>

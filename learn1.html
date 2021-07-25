@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .parent {
+
+      position: relative;
+      height: 300px;
+      border: 1px solid gray;
+    }
+
+    .childA {
+      height: 100px;
+      background-color: yellow;
+    }
+
+    .childB {
+      background-color: red;
+    }
+
+    /* 两种方式 使 childB 填充 parent剩余空间 */
+
+    .son1 {
+      position: absolute;
+      top: 100px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .parent2 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 
+    
+    flex-grow:值大于0表示索取父元素空间，值越大索取越多，按子元素索取之和的百分比分配
+    
+     */
+
+    .son2 {
+
+      flex-grow: 1;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="parent">
+    <div class="childA"></div>
+    <div class="childB son1"></div>
+  </div>
+  <br />
+  <div class="parent parent2">
+    <div class="childA"></div>
+    <div class="childB son2"></div>
+  </div>
+</body>
+
+</html>
