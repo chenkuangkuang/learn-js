@@ -1,0 +1,46 @@
+<!-- 双飞翼布局-圣杯布局：左右两边定宽，中间自适应宽度-->
+<!-- 方案1：使用左右float+中间宽度auto -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .left, .right{
+      width: 200px;
+      height: 500px;
+    }
+    .middle{
+      height: 500px;
+    }
+    .left{
+      float: left;
+      background-color: red;
+    }
+    .right{
+      float: right;
+      background-color: yellow;
+    }
+    .middle{
+      background-color: gray;
+      border: 1px solid blue;
+      margin: 0px 207px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="left"></div>
+  <div class="right"></div>
+  <div class="middle"></div>
+
+  <script>
+
+  </script>
+</body>
+
+</html>

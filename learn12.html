@@ -1,0 +1,61 @@
+<!-- 双飞翼布局-圣杯布局：左右两边定宽，中间自适应宽度-->
+<!-- 方案3：使用 flex -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .left,
+    .right {
+      width: 200px;
+      height: 500px;
+    }
+
+    .middle {
+      height: 500px;
+    }
+
+    body {
+      display: flex;
+    }
+
+    .left {
+      background-color: red;
+      /* 不允许弹性缩放 */
+      flex: 0;
+      /* 设置弹性盒子的初始长度 */
+      flex-basis: 200px;
+    }
+
+    .right {
+      background-color: yellow;
+      /* 不允许弹性缩放 */
+      flex: 0;
+      /* 设置弹性盒子的初始长度 */
+      flex-basis: 200px;
+    }
+ 
+    .middle {
+      background-color: gray;
+      /* 允许弹性缩放 */
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="left"></div>
+  <div class="middle"></div>
+  <div class="right"></div>
+  <script>
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!-- 手写幻灯片效果-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      height: 300px;
+      width: 100vw;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .container-inner {
+      width: 300vw;
+      display: flex;
+      position: absolute;
+      left: 0;
+    }
+
+    .card {
+      float: left;
+      height: 300px;
+      width: 100vw;
+    }
+
+    .card:nth-child(1) {
+      background-color: red;
+    }
+
+    .card:nth-child(2) {
+      background-color: yellow;
+    }
+
+    .card:nth-child(3) {
+      background-color: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-inner">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+  </div>
+  <script>
+    const inner = document.querySelector(".container-inner");
+    let screenWidth = document.body.clientWidth;
+    screenWidth = document.querySelector(".card").clientWidth;
+    console.log('=inner=', inner, screenWidth);
+
+    const movePlus = (dom, targetLeft)=>{
+      setTimeout(() => {
+        if(parseInt(dom.style.left || 0) < targetLeft){
+          dom.style.left = ((dom.style.left || 0) + 50) + 'px';
+          movePlus(dom, targetLeft);
+        }
+      }, 10);
+    }
+
+    const moveSub = (dom, targetLeft)=>{
+      setTimeout(() => {
+        console.log('进入延时',);
+        if(parseInt(dom.style.left || 0) > targetLeft){
+          console.log('执行减法', parseInt(dom.style.left || 0), targetLeft);
+          dom.style.left = (parseInt(dom.style.left || 0) - 50) + 'px';
+          moveSub(dom, targetLeft);
+        }
+      }, 10);
+    }
+    const setLeftStyle = (dom, targetLeft) => {
+      const curLeft = parseInt(dom.style.left || 0);
+      console.log('==', dom, targetLeft, 1, curLeft);
+      let time = 0;
+      if (curLeft < targetLeft) {
+        movePlus(dom, targetLeft);
+      } else if (curLeft > targetLeft) {
+        moveSub(dom, targetLeft);
+      }
+    }
+    let curIndex = 0;
+    setInterval(() => {
+      console.log('=curIndex=', curIndex, inner.style.left, screenWidth);
+      let targetLeft;
+      if (curIndex == 2) {
+        // targetLeft = 0;
+        inner.style.left = 0;
+        curIndex = 0;
+        return;
+      } else {
+        targetLeft = parseInt(inner.style.left || 0) - screenWidth;
+        // inner.style.left = 
+        curIndex++;
+      }
+      setLeftStyle(inner, targetLeft);
+    }, 3000);
+  </script>
+</body>
+
+</html>

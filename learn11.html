@@ -1,0 +1,49 @@
+<!-- 双飞翼布局-圣杯布局：左右两边定宽，中间自适应宽度-->
+<!-- 方案2：使用 中间width:100% + 负值 margin -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .left, .right{
+      width: 200px;
+      height: 500px;
+    }
+    .left, .right, .middle{
+      float: left;
+    }
+    .middle{
+      height: 500px;
+    }
+    .left{
+      background-color: red;
+      margin-left: -100%;
+    }
+    .right{
+      background-color: yellow;
+      margin-left: -200px;
+    }
+    .middle{
+      background-color: gray;
+      /* border: 1px solid blue; */
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="middle"></div>
+  <div class="left"></div>
+  <div class="right"></div>
+  <script>
+
+  </script>
+</body>
+
+</html>
