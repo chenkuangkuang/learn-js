@@ -81,3 +81,49 @@
   > 3.https需要SSL证书，http不需要
   
 
+### 8.fetch发送post请求为什么会发送两次？
+
+  第一次发送的是options查询请求，是因为post改变了请求头，options请求用于询问服务器是否支持修改的请求头
+
+
+### 9.关于正则的方法：match、test、repalce
+
+  只有replace的第二个参数可以是回调函数
+
+  字符串支持的方法：str.replace, str.match
+
+  正则对象支持的方法：reg.test
+
+
+### 10.缓存关键字的理解
+
+  no-store (Cache-Control: no-store) 完全不缓存，客户端和服务器都不缓存
+
+  no-cache (Cache-Control: no-cache) 跳过设置强缓存，但不妨碍协商缓存
+
+    > 协商缓存：即请求服务器时，查询资源是否过期
+
+  Expires： 属于http1.0的老的缓存时间定义，http1.1多用max-age
+
+    > Expires定义的是绝对时间，max-age是相对时间（比如多少秒之后过期）
+
+  Cache-Control  服务器返回头（response header），用于标识该资源的缓存过期时间等
+
+    > max-age 缓存时间  
+    > public  可以被浏览器和代理服务器缓存，private，只能被浏览器缓存
+    > immutable 该资源永远不会变（刷新的时候不要请求服务器）(immutable本身是不可变的意思)
+
+    cache-control 表示强缓存，每次打开页面都查询缓存
+
+  Last-Modified （返回头） 资源最后修改时间
+
+    如果带有Last-Modified，下次请求会带上If-modified-since 的 HttpHeader 
+
+  If-Modified-Since （请求头） 客户端缓存的最后修改时间
+
+    Last-Modified,Etag,Expires 三个同时使用时。先判断 Expire ，然后发送 Http 请求，服务器先判断 last-modified ，再判断 Etag ，必须都没有过期，才能返回 304 响应
+
+  Etag （请求头）资源在服务器的唯一标识符
+
+
+
