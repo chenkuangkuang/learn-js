@@ -25,11 +25,23 @@ new Promise(function (resolve) {
 
 console.log('script end')
 
-// script start
-// async1 start
-// async2
-// promise1
-// script end
-// async1 end
-// promise2
-// settimeout
+/* 
+
+主线程（宏任务）：
+
+1.script start
+2.async1 start
+3.async2
+4.promise1
+5.script end
+
+微任务：
+
+6.async1 end
+7.promise2
+
+第二轮宏任务：
+
+8.setTimeout
+
+*/

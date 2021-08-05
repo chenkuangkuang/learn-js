@@ -18,8 +18,8 @@
     ul {
       width: 100%;
       list-style: none;
-      position: fixed;
-      top: 0;
+      /* position: fixed; */
+      /* top: 0; */
 
     }
 
@@ -30,6 +30,7 @@
       border-left: 1px solid #ddd;
       border-right: 1px solid #ddd;
       border-bottom: 1px solid #ddd;
+      position: absolute;
     }
   </style>
 </head>
@@ -69,6 +70,16 @@
       console.log('=e=', document.documentElement.offsetTop, document.documentElement.scrollTop, containner.offsetTop, containner.scrollTop);
 
       // document.documentElement.scrollTop 滚动距离
+
+      let curScrollTop = document.documentElement.scrollTop;
+      let strHtml = '';
+
+      for (var i = 0; i < maxLiNum; i++) {
+        let curTop = (curScrollTop + i * 50) + 'px';
+        strHtml += `<li style='top:${curTop}'>${i + 1}</li>`
+      }
+
+      ulDom.innerHTML = strHtml;
     })
   </script>
 </body>
