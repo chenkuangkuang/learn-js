@@ -1,0 +1,1 @@
+// promise.then 不同类型值的 传递
