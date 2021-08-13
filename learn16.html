@@ -1,0 +1,61 @@
+<!-- flex 冷门属性 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .parent{
+        display: flex;
+    }
+
+    .child{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border: 1px solid black;
+        flex-grow: 1;
+    }
+
+    .child:nth-last-child(1){
+        /* 超出200px时此属性会拓展剩余空间 ,默认为0 ，grow:伸展 */
+        /* flex-grow: 3;  */
+
+        /* 小于200px时，此属性会缩小项目尺寸,默认为0，shrink：收缩 */
+        /* flex-shrink: 2 */
+
+        /* 分配多余空间之前，项目占据的实际空间, 默认值 auto，basis：基础 */
+        /* flex-basis: 300px;  在超过200px时，此属性会让项目总是多出100px */
+
+        /* flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto */
+        /* flex: 1; === flex: 1 1 任意数字+任意长度单位 */
+        /* flex: 2; */
+
+        /* 单个项目设置不一样的对齐方式 可覆盖align-items属性 默认值auto */
+        align-self: flex-start;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class='parent'>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+  </div>
+
+  <p>参考文档1：<a href="https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">阮一峰：Flex 布局教程：语法篇</a></p>
+  <p>参考文档2：<a href="https://zhuanlan.zhihu.com/p/136223806">白日梦的知乎专栏文章：flex:1 到底代表什么?</a></p>
+
+  <script>
+
+  </script>
+</body>
+
+</html>

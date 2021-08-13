@@ -144,4 +144,28 @@
     ````
 
 
-### 8.Promise在then函数中不同返回值的区别
+### 8.什么是暂时性死区？
+
+    关键点是let/const 和 var 的区别。前者会产生暂时性死区，在定义之前无法使用变量
+
+    ````javascript
+
+    console.log(a); // undefined
+    var a = 1;
+
+    console.log(b); // 报错：（引用错误）‘Uncaught ReferenceError: Cannot access ‘a’ before initialization’
+    let b = 1;
+
+    ````
+
+### 9.react为什么改变生命周期，为什么要使用hook
+
+    在react使用fiber之后，will_类型的生命周期可能会出现调用多次的情形，所以放弃
+
+    hook的出现，是基于纯函数的优势，以及更好的组件复用
+
+    **Fiber** 翻译为任务切片，或可中断更新，解决react15及之前的版本虚拟dom的diff同步卡顿问题
+
+### 10.webpack的构建流程？打包原理？loader和plugin的区别？tree-shaking？webpack loader的执行顺序？热更新原理？webpack的优化？
+
+    
