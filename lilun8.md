@@ -168,4 +168,48 @@
 
 ### 10.webpack的构建流程？打包原理？loader和plugin的区别？tree-shaking？webpack loader的执行顺序？热更新原理？webpack的优化？
 
-    
+    **构建流程**
+    1.读取配置，识别入口文件
+    2.逐层识别模块依赖
+    3.对代码的分析、转换、编译
+    4.输出到最终文件
+
+    > Webpack在启动后，会从Entry开始，递归解析Entry依赖的所有Module，每找到一个Module，就会根据Module.rules里配置的Loader规则进行相应的转换处理，对Module进行转换后，再解析出当前Module依赖的Module，这些Module会以Entry为单位进行分组，即为一个Chunk。因此一个Chunk，就是一个Entry及其所有依赖的Module合并的结果。最后Webpack会将所有的Chunk转换成文件输出Output。在整个构建流程中，Webpack会在恰当的时机执行Plugin里定义的逻辑，从而完成Plugin插件的优化任务。
+
+
+    **chunk 和 bundle 的区别**
+    chunk 是打包过程中的模块文件
+    bundle 是打包结果
+
+    ![chunk和bundle的区别](https://image-1255652541.cos.ap-shanghai.myqcloud.com/uPic/image-20200518210532171.png)
+
+    **什么是AST**
+    AST是抽象语法树，由源代码转化而来，便于编译器、插件等对代码进行处理
+
+    **loader是编译转换器，plugin用于增强webpack的功能，babel是js编译器**
+
+    **tree-shaking是什么**
+    引入模块时，不引入全部，只引入需要的代码
+
+    **loader的执行顺序**
+    webpack的加载时从右往左进行
+
+    ````javascript
+
+    {
+        test: /\.less$/,
+        use: [
+            'style-loader',
+            'css-loader',
+            'less-loader'
+        ]
+    }
+
+    ````
+
+    **webpack热更新原理**
+    用wepack-dev-server启动一个服务，浏览器和服务端经过websocket进行长连接，webpack内部的watch监听文件修改。发生修改时webpack重新打包编译到内存中，webpack-dev-server依赖中间件和webpack交互，请求一个携带hash值的json和js文件。
+
+    **webpack优化**
+
+
