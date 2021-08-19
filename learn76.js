@@ -13,17 +13,33 @@ function bubbleSort(arr) {
             // 如果左边的大于右边的，调换顺序
             console.log('=123=', arr[i], arr[j]);
             if (arr[i] > arr[j]) {
-                // let cache = arr[i];
-                // console.log('=cache=', cache);
-                // arr[i] = arr[j];
-                // arr[j] = cache;
-                // 使用数组结构，进行交换
                 [arr[i], arr[j]] = [arr[j], arr[i]];
             }
         }
     }
     return arr;
 }
+
+// 官方实现
+
+function bubbleSort2(arr) {
+    // 缓存数组长度
+    const len = arr.length;
+    // 外层循环用于控制从头到尾的比较+交换到底有多少轮
+    for (let i = 0; i < len; i++) {
+      // 内层循环用于完成每一轮遍历过程中的重复比较+交换
+      for (let j = 0; j < len - 1; j++) {
+        // 若相邻元素前面的数比后面的大
+        if (arr[j] > arr[j + 1]) {
+          // 交换两者
+          [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        }
+      }
+    }
+    // 返回数组
+    return arr;
+  }
+  
 
 const re = bubbleSort(arr);
 console.log('=re=', re);
