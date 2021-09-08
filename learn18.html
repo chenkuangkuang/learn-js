@@ -1,0 +1,57 @@
+<!-- 请简单实现双向数据绑定mvvm -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <input id="input" />
+  <p id="data"></p>
+  <button id="button">按钮</button>
+
+  <script>
+    var inputDom = document.getElementById("input");
+    var dataDom = document.getElementById("data");
+    var button = document.getElementById("button");
+    var data = {};
+
+    Object.defineProperty(data, "text", {
+      set(value) {
+        dataDom.innerText = value;
+        this.value = value;
+        if(inputDom.value != value){
+          inputDom.value = value;
+        }
+        console.log('newValue', value);
+      }
+    })
+
+    // inputDom.addEventListener("input propertychange", function(e){
+    //   console.log('=e.target.value=222', e.target.value);
+    //   data.text = e.target.value;
+    // })
+
+    inputDom.oninput  = function (e) {
+      console.log('=e.target.value=', e.target.value);
+      data.text = e.target.value;
+    }
+
+    button.onclick = function () {
+      console.log('onClick',);
+      data.text = 'newButtonText';
+    }
+
+
+  </script>
+</body>
+
+</html>
