@@ -46,8 +46,24 @@
     - 2.async属性，异步加载和执行
     - 3.defer仅加载，异步执行（等到文档所有元素解析完成之后，DOMContentLoaded事件触发执行之前）
 
-### 2.原型链相关，prototype, __proto__，继承类型、
+### 2.原型链相关，prototype, __proto__，继承类型等
 
+ - prototype和__proto__的区别
+   0.prototype叫显式原型，__proto__叫隐式原型
+   1.对象只有__proto__属性，prototype属性属于构造函数，函数同时也有__proto__属性
+   2.构造函数的prototype指向其原型对象，构造函数new出来的实例对象共有原型对象的属性和方法
+   3.构造函数的原型对象的constuctor指向构造函数
+   4.实例的__proto__指向构造函数的prototype
+   5.构造函数也有__proto__，指向构造函数的构造函数的原型对象，也就是Function.prototype
+   6.原型对象的__proto__指向Object.prototype
+   7.最后，Object.prototype的__proto__指向null
+
+ - 对象访问属性或方法的过程
+   就近原则，优先访问自己的实例，没有则访问原型对象，再没有则继续顺着原型链网上查找，直到顶端，实在没有就返回undefined
+
+ - Object.getPrototypeOf，isPrototypeOf，instanceof
+
+ - 继承类型
 ### 3.性能优化：js优化、css优化、html优化，图片懒加载
 
 ### 4.css常见坑：BFC和z-index，双margin重叠，幽灵空白节点，居中问题，常见布局
