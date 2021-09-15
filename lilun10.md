@@ -66,15 +66,36 @@
  - 继承类型
 ### 3.性能优化：js优化、css优化、html优化，图片懒加载
 
+ - 1.css优化
+   
+
 ### 4.css常见坑：BFC和z-index，双margin重叠，幽灵空白节点，居中问题，常见布局
 
 ### 5.webpack关键配置项，工作流程，babel和plugin的区别，常用的babel和plugin，执行顺序，优化手段
+
+ - webpack工作流程
+   1.读取配置识别入口文件
+   2.递归解析得到依赖module
+   3.根据loader转换处理
+   4.依赖分组得到chunk
+   5.得到output
+   6.在某些生命周期执行plugin
+   7.输出文件
+   
+ - webpack优化
+ https://github.com/dwqs/blog/issues/52
 
 ### 6.常见算法：防抖，节流，排序（冒泡、快速、选择），深度克隆，数组扁平，柯里化，数组去重
 
 ### 7.常见设计模式：观察者、订阅发布
 
 ### 8.前端安全：XSS和CSRF，http加密，对称加密和非对称加密
+
+- XSS Cross Site Script 跨站脚本攻击
+  举例比如攻击者在富文本框填入js代码，后台生成评论，被攻击者访问此评论，js被执行，获取到被攻击者的隐私数据或篡改网页
+
+- CSRF Cross Site request forgery 跨站请求伪造
+  比如攻击者伪造页面A，引导用户在登录了网站B的情况下自动触发页面A中的请求，以实现页面B的操作（本质上就是使用了用户在网站B的cookie）
 
 ### 9.开发常见报错
 
