@@ -142,7 +142,7 @@ https://www.cnblogs.com/zhuangbowu/p/14607108.html
    inputRef.current.focus();
    <input ref={inputRef}>
 
-# 8.重学flex布局
+### 8.重学flex布局
  - 容器属性
    flex-direction 主轴方向
    flex-wrap 是否换行
@@ -178,4 +178,12 @@ https://www.cnblogs.com/zhuangbowu/p/14607108.html
    ````
 
  - 参考：https://blog.csdn.net/nongshuqiner/article/details/78792174
+
+### 10.vue常见方法
+
+ - h，也就是createElement方法
+
+ - slot，插槽，类似于react中的props.children，也就是自定义组件包裹的内容
+
+ - 
 

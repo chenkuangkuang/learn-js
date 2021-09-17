@@ -140,3 +140,11 @@ function createAnother(original){
  - 5.generator
  - 6.async await （ES7）
 
+### 11.display默认值，不同元素不同，div是block，span是inline
+
+### 12.new Vue，执行初始化
+挂载$mount方法，通过自定义Render方法、template、el等生成Render函数
+通过Watcher监听数据的变化
+当数据发生变化时，Render函数执行生成VNode对象
+通过patch方法，对比新旧VNode对象，通过DOM Diff算法，添加、修改、删除真正的DOM元素
+

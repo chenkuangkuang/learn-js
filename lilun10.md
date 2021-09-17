@@ -97,7 +97,20 @@
 - CSRF Cross Site request forgery 跨站请求伪造
   比如攻击者伪造页面A，引导用户在登录了网站B的情况下自动触发页面A中的请求，以实现页面B的操作（本质上就是使用了用户在网站B的cookie）
 
-### 9.开发常见报错
+### 9.js有哪些报错类型
+
+ - SyntaxError（语法错误）
+ - ReferenceError（引用错误）// not defined
+ - RangeError (范围错误) // var a = new Array(-1)
+ - TypeError (类型错误) // 调用不存在的方法
+ - URIError (URL错误) url相关函数参数不正确
+ - EvalError (eval错误)
+
+ - 手动抛出错误
+
+ throw new Error("出错了！"); 
+ throw new RangeError("出错了，变量超出有效范围！"); 
+ throw new TypeError("出错了，变量类型无效！");
 
 ### 11.手写系列：promise，new，bind，call，instanceof，完整准确的类型判断，JSON.stringify和JSON.parse
 
