@@ -5,6 +5,7 @@ var a = {
     c() {
         console.log("c=", this);
     },
+    // 上述两种写法结果相同
     d: () => {
         console.log("d=", this);
     }
@@ -40,5 +41,19 @@ var x = {
     }
 }
 
-x.aa.bb();
+x.aa.bb(); // global
+
+var y = {
+    name: "yname",
+    aa: {
+        name: "aaname",
+        // 对象里面的方法的this，指向这个方法所属的对象（而不是最外层的对象）
+        cc: function () {
+            console.log('=this=cc=', this, this.name);
+        }
+    }
+}
+
+y.aa.cc(); // aa , aaname
+
 

@@ -1,0 +1,47 @@
+<!-- 使用flex实现等高布局 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body,
+    p {
+        margin: 0;
+    }
+
+    .parent {
+        display: flex;
+    }
+
+    .left,
+    .center,
+    .right {
+        flex: 1;
+    }
+
+    .center {
+        margin: 0 20px;
+    }
+</style>
+
+<body>
+    <div class="parent" style="background-color: lightgrey;">
+        <div class="left" style="background-color: lightblue;">
+            <p>left</p>
+        </div>
+        <div class="center" style="background-color: pink;">
+            <p>center</p>
+            <p>center</p>
+        </div>
+        <div class="right" style="background-color: lightgreen;">
+            <p>right</p>
+        </div>
+    </div>
+</body>
+
+</html>

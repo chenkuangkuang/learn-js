@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        border: 1px solid red;
+
+    }
+
+    .container div {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        border: 1px solid black;
+    }
+
+    /* 导致div2 和 div3重叠 */
+    .div2 {
+        float: left;
+    }
+
+    .div1{
+        /* float: left; */
+    }
+</style>
+
+<body>
+    <div class="container">
+        <!-- 注意行内元素分行写，会在界面上呈现出空隙 -->
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+</body>
+
+</html>
