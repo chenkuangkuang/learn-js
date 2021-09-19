@@ -8,6 +8,8 @@
 
 ### 2.flex布局统一高度问题
 
+见 等高布局
+
 ### 3.creat-react-app做了什么
 
 1.React、jsx，ES6等语法的babel配置
@@ -23,6 +25,8 @@
 4.匹配并装载对应的组件，卸载当前的组件
 
 ### 5.如何不跳转加载html
+
+使用ajax加载html，读取body、script等解析并插入body和head中，参考：http://jser.me/2015/03/10/ajax+history.pushState%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E8%B7%B3%E8%BD%AC%E5%88%B7%E6%96%B0.html
 
 ### 6.防抖和节流的区别及实现
 

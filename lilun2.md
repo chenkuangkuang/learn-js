@@ -45,6 +45,8 @@
 
   2.Promise
 
+  三个状态：pending（悬而未决）、fulfilled（完成），rejected（拒绝）
+
   缺点：无法取消 Promise ，错误需要通过回调函数来捕获
 
   3.Generator
