@@ -42,6 +42,8 @@ https://blog.csdn.net/LavanSum/article/details/81317423
 
  - 见learn91.js
 
+ - **箭头函数没有this** 见vue3文档的生命周期钩子的TIPS章节，因此vue提示不要在property或回调上使用箭头函数
+
 ### 5.原型链的深入理解（一句话）
 
 在调取一个对象的属性时，会先在对象本身查找，如果没有，就根据proto找到构造函数的原型，如果依然无此属性，继续往上找，直到到达顶层Object.prototype，他的proto指向null，如果没有结果就返回null。
