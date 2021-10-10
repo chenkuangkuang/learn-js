@@ -1,4 +1,4 @@
-<!-- vertical-align的生效条件 -->
+<!-- flex 冷门属性 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,17 +9,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    /* vertical-align生效的条件是父元素设置line-height并且vertical-align设置在子元素上  */
-    div{
-      width: 500px;
-      height: 300px;
-      border: 1px solid red;
-      line-height: 300px;
+    .parent{
+        display: flex;
     }
 
-    img{
-      /* 设置值为bottom 实现靠下对齐 */
-      vertical-align: middle; 
+    .child{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border: 1px solid black;
+        flex-grow: 1;
+    }
+
+    .child:nth-last-child(1){
+        /* 超出200px时此属性会拓展剩余空间 ,默认为0 ，grow:伸展 */
+        /* flex-grow: 3;  */
+
+        /* 小于200px时，此属性会缩小项目尺寸,默认为0，shrink：收缩 */
+        /* flex-shrink: 2 */
+
+        /* 分配多余空间之前，项目占据的实际空间, 默认值 auto，basis：基础 */
+        /* flex-basis: 300px;  在超过200px时，此属性会让项目总是多出100px */
+
+        /* flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto */
+        /* flex: 1; === flex: 1 1 任意数字+任意长度单位 */
+        /* flex: 2; */
+
+        /* 单个项目设置不一样的对齐方式 可覆盖align-items属性 默认值auto */
+        align-self: flex-start;
     }
 
   </style>
@@ -27,9 +44,14 @@
 
 <body>
 
-  <div >
-    <img src="http://124.70.109.106:8082/publiccms/webfile/upload/2021/07-27/18-05-280825548699722.png" alt="">
+  <div class='parent'>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
   </div>
+
+  <p>参考文档1：<a href="https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">阮一峰：Flex 布局教程：语法篇</a></p>
+  <p>参考文档2：<a href="https://zhuanlan.zhihu.com/p/136223806">白日梦的知乎专栏文章：flex:1 到底代表什么?</a></p>
 
   <script>
 

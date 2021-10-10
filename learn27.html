@@ -1,0 +1,39 @@
+<!-- vertical-align的生效条件 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* vertical-align生效的条件是父元素设置line-height并且vertical-align设置在子元素上  */
+    div{
+      width: 500px;
+      height: 300px;
+      border: 1px solid red;
+      line-height: 300px;
+    }
+
+    img{
+      /* 设置值为bottom 实现靠下对齐 */
+      vertical-align: middle; 
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div >
+    <img src="http://124.70.109.106:8082/publiccms/webfile/upload/2021/07-27/18-05-280825548699722.png" alt="">
+  </div>
+
+  <script>
+
+  </script>
+</body>
+
+</html>

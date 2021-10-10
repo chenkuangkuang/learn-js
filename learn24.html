@@ -1,0 +1,61 @@
+<!-- 使用absolute 绝对定位 实现等高布局 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body,
+    p {
+        margin: 0;
+    }
+
+    .parent {
+        position: relative;
+        height: 40px;
+    }
+
+    .left,
+    .center,
+    .right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+
+    .left {
+        left: 0;
+        width: 100px;
+    }
+
+    .center {
+        left: 120px;
+        right: 120px;
+    }
+
+    .right {
+        width: 100px;
+        right: 0;
+    }
+</style>
+<!-- 只能通过设置父元素高度来适应子元素内容，不能直接改变子元素高度， -->
+<body>
+    <div class="parent" style="background-color: lightgrey;">
+        <div class="left" style="background-color: lightblue;">
+            <p>left</p>
+        </div>
+        <div class="center" style="background-color: pink;">
+            <p>center</p>
+            <p>center</p>
+        </div>
+        <div class="right" style="background-color: lightgreen;">
+            <p>right</p>
+        </div>
+    </div>
+</body>
+
+</html>

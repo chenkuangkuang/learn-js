@@ -1,0 +1,59 @@
+<!-- 使用 边框模拟 实现等高布局 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body,
+    p {
+        margin: 0;
+    }
+
+    .parent {
+        position: relative;
+    }
+
+    .center {
+        box-sizing: border-box;
+        padding: 0 20px;
+        background-clip: content-box;
+        border-left: 210px solid lightblue;
+        border-right: 310px solid lightgreen;
+    }
+
+    .left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+    }
+
+    .right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+    }
+</style>
+<!-- 实际上left 和 right 是由center 的 border-left 和 border-right撑开的 -->
+<body>
+    <div class="parent" style="background-color: lightgrey;">
+        <div class="left">
+            <p>left</p>
+        </div>
+        <div class="center" style="background-color: pink;">
+            <p>center</p>
+            <p>center</p>
+        </div>
+        <div class="right">
+            <p>right</p>
+        </div>
+    </div>
+</body>
+
+</html>
